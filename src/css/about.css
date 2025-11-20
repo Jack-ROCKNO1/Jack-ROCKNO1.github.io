@@ -1,0 +1,258 @@
+body {
+  background: var(--page-bg);
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5dvh 1.5dvw;
+    background-color:#78cc3c;
+    position: sticky;
+    top: 0;
+    z-index: 1;               
+    background-color: #78cc3c;  
+    width: 100%;
+}
+
+.nav-logo {
+    justify-self: start;
+    align-self: center;
+    margin: 1dvh 0;
+}
+
+.nav-logo img {
+    height: 70px;
+    max-height: 10dvh;
+}
+
+.nav-btn {
+    justify-self: center;
+    font-family: 'bpdots', sans-serif;
+    font-size: 1.25em;
+    text-decoration: none;
+    color: #000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5dvw;
+}
+
+a:hover {
+    color: #C2FF26;
+}
+
+.two-sides {
+   height:87%;
+   width: 100%;
+   display: flex;
+   justify-content:center;
+   align-items: stretch;
+   flex-direction: row;
+   flex-wrap: none;
+   /* outline:5px solid pink; */
+   overflow: hidden;
+}
+
+.main-content {
+  height:100%;
+  width:60%;
+  padding-left: 2dvw;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:start;
+}
+
+.mugshot {
+    /* flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+  width:100%;
+  height:auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  /* outline:10px solid aqua; */
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+  font-family: 'bpdots', sans-serif;
+  font-size: clamp(1rem, calc(1rem + 0.5dvw), 5rem);
+  overflow: visible;
+}
+
+.links {
+  margin-top: clamp(1rem, 10dvh, 10rem);
+}
+
+.spacer {
+  display: block;
+  height: 1rem;  
+}
+
+.mugshot img {
+    height: 80dvh;
+    width: auto;
+}
+
+/* LOGO CAROUSEL ANIMATION */
+@keyframes slide{
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logo-scroller {
+  flex: 0 0 auto;
+  overflow: hidden;
+  user-select: none;
+  border-top: 0.27vh solid #000;
+  border-bottom: 0.27vh solid #000;
+  white-space: nowrap;
+}
+
+.logo-scroller:hover .logos-slide{
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: inline-block;
+  padding-top: 0.4dvh;
+  /* animation: 16s slide infinite linear;  */
+  animation: 19s slide infinite steps(480); 
+}
+
+.logos-slide img {
+  height: 6dvh;
+  margin: 0 0.5dvw;
+}
+
+
+.question {
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0;
+  line-height: 1;             /* no extra vertical space in lines */
+  align-items: stretch;
+}
+
+h1 {
+  font-family: 'Frobo', sans-serif;
+  font-size: clamp(3dvw, calc(3rem + 6.2dvw), 12dvw);
+  padding: 0;
+  margin-top: 2dvh; 
+  margin-bottom: 0;
+}
+
+.links a, .links a:visited {
+  color: #0000fe;
+  text-decoration: none; 
+}
+
+.links a:hover {
+  color: #C2FF26;
+}
+
+@media (min-width: 1280px) and (max-width: 1919px) {
+  h1 {
+    font-size: clamp(2dvw, calc(3rem + 4dvw), 8dvw);
+  }
+  .desc {
+    font-size: clamp(0.5rem, calc(0.7rem + 0.5dvw), 5rem); 
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2500px) {
+  h1 {
+    font-size: clamp(2dvw, calc(3rem + 5.3dvw), 8dvw);
+  }
+  .desc {
+    font-size: clamp(1rem, calc(1rem + 0.45dvw), 5rem); 
+  }
+}
+
+@media (min-width: 3840px) and (max-width: 7679px) {
+  h1 {
+    font-size: clamp(2dvw, calc(4rem + 6.185dvw), 12dvw);
+  }
+  .desc {
+    font-size: clamp(2rem, calc(1rem + 1dvw), 5rem); 
+  }
+}
+
+@media (min-width: 7680px) and (max-width: 7690px) {
+  h1 {
+    font-size: clamp(2dvw, calc(5rem + 6.8dvw), 15dvw);
+  }
+  .desc {
+    font-size: clamp(2rem, calc(2rem + 1.2dvw), 10rem); 
+  }
+}
+
+.for-desc {
+  margin-bottom: 1.5vh;
+  border: none;
+  height: 0.27vh;
+  background-color: #000;
+}
+
+.lines {
+  width: 100%;
+}
+
+@media (max-width: 1160px) {
+  .two-sides {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto; /* allow natural height */
+    overflow: visible;
+    padding-left: 0;
+  }
+
+  /* Allow main-content children to participate in the parent's flex layout */
+  .main-content {
+    display: contents;
+  }
+
+  /* Make each section full-width and set the stacking order */
+  .logo-scroller { order: 1; width: 100%; }
+  .question     { order: 2; width: 100%; padding-top: 0; padding-bottom: 0; margin: 0; }
+  .lines        { order: 3; width: 100%; }
+  .mugshot      { order: 4; width: 100%; display: flex; justify-content: center; align-items: center; }
+  .desc         { order: 5; width: 100%; display: flex; padding-top: 3dvh; padding-bottom: 12dvh; }
+
+  /* Make sure images scale nicely on narrow screens */
+  .mugshot img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50vh;
+  }
+
+  /* Add small horizontal padding for readable content on small screens */
+  .logo-scroller, .question, .lines, .desc {
+    box-sizing: border-box;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+  }
+
+  /* Reduce extra spacing on the headline at this size */
+  h1 { 
+    margin-top: 1.4rem; 
+    margin-bottom: 0;
+    font-size: clamp(1rem, calc(4rem + 3dvw), 9dvw);
+   }
+
+  /* Slightly reduce logo scroller top padding on small screens */
+  .logos-slide { padding-top: 0.2dvh; }
+}

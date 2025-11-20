@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+    <head>
+        <meta charset = "utf-8"/>
+        <meta name = "viewport" content = "width=device-width"/>
+        <title>ROCKNO1</title>
+        <link rel="icon" href="assets/images/jfavicon.gif" type="image/gif">
+        <link rel = "stylesheet" type = "text/css" href = "src/css/style.css">
+        <link rel = "stylesheet" type = "text/css" href = "src/css/index.css">
+    </head>
+    
+    <body>
+        <div class = "site">
+            <header class = "logo-scroller" aria-label="Logo Scroller">
+                <div class = "logos-slide" role = "presentation">
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                </div>
+                <div class = "logos-slide" role = "presentation">
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                    <img src = "assets/images/jflogo.svg" />
+                </div>
+            </header>
+
+            <main class = "main-area">
+                
+                <div class = "hero" aria-labelledby="site-title">
+                    <h1 id = "site-title" class = "site-title">ROCKNO1</h1>
+                </div>
+
+                <div class = "lined">
+                    <div class = "lined_content">
+                        <hr class = "for-desc">
+                        <hr class = "for-desc">
+                        <div class = "lined_text">
+                            A PORTFOLIO CONTAINING THE WORKS OF JACK FLEMING
+                        </div>
+                        <hr class = "for-desc">
+                        <hr class = "for-desc">
+                        <hr class = "for-desc">
+                        <hr class = "for-desc">
+                        <hr class = "for-desc">
+                        <hr class = "for-desc">
+                        <hr class = "for-desc">
+                        <hr class = "for-desc">
+                        <hr class = "for-desc">
+                        <hr class = "for-desc">
+                    </div>
+                </div>
+
+                <div class = "big-spin">
+                    <img src = "assets/images/mercydogg.gif" alt="Big Graphic">
+                </div>
+
+                <div class = "nav">
+                    <a href = "video.html" class = "nav-btn">VIDEO</a>
+                    <a href = "design.html" class = "nav-btn">DESIGN</a>
+                    <a href = "about.html" class = "nav-btn">ABOUT</a>
+                </div>
+
+            </main>
+
+        </div>
+
+             <script>
+                (function(){
+                    const hoverSrc = 'assets/images/jflogohover.svg';
+                    document.addEventListener('DOMContentLoaded', function(){
+                        // select all img tags whose src ends with jflogo.svg
+                        const imgs = Array.from(document.querySelectorAll('img')).filter(i => i.getAttribute('src') && i.getAttribute('src').endsWith('jflogo.svg'));
+                        imgs.forEach(img => {
+                            const original = img.getAttribute('src');
+                            img.dataset.original = original;
+                            img.dataset.hover = hoverSrc;
+
+                            // Make keyboard-focusable for accessibility if it isn't already
+                            if (!img.hasAttribute('tabindex')) img.setAttribute('tabindex','0');
+
+                            img.addEventListener('mouseenter', () => img.src = img.dataset.hover);
+                            img.addEventListener('mouseleave', () => img.src = img.dataset.original);
+                            img.addEventListener('focus', () => img.src = img.dataset.hover);
+                            img.addEventListener('blur', () => img.src = img.dataset.original);
+
+                            // If image is inside a link and you prefer the link to be focusable instead,
+                            // consider moving tabindex to the link and listening on it instead of the img.
+                        });
+                    });
+                })();
+        </script>
+                
+    </body>    
+</html> 

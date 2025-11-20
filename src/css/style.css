@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+   --page-bg: #78cc3c;
+   --text-green: #78cc3c;
+   --button-black: #000;
+   --page-pad: 6px;  
+}
+
+ @font-face {
+  font-family: 'Frobo';
+  src: url('../../assets/fonts/F_1.8.woff2') format("woff2");
+  font-style: normal;
+  font-display: auto;
+} 
+
+@font-face {
+  font-family: 'bpdots';
+  src: url('../../assets/fonts/bpunicase.woff2') format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  cursor: url('../../assets/cursors/p2.cur'), auto;
+}
+
+a:hover{
+  cursor: url('../../assets/cursors/link.cur'), auto;
+}

@@ -205,6 +205,9 @@ body {
     text-align: center;
     font-size: clamp(0.25em, calc(0.475dvw + 1.5rem), 5em);
   }
+   .nav .nav-btn {
+     margin-bottom: 2dvh;
+    }
 }
 
 @media (max-width: 852px) {
@@ -297,6 +300,9 @@ body {
     text-align: center;
     font-size: clamp(0.15em, calc(0.465dvw + 0.74rem), 5em);
   }
+   .nav .nav-btn {
+     margin-bottom: 1.5dvh;
+    }
 }
 
 @media (max-width: 412px) {
